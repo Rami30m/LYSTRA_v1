@@ -1,10 +1,10 @@
-import { Fira_Sans } from "next/font/google";
-import "./globals.css";
+import { preconnect, Montserrat } from "next/font/google";
+import "./about.css";
 
-const firaSans = Fira_Sans({
-  variable: "--font-fira-sans",
+const montserrat = Montserrat({
   subsets: ["latin", "cyrillic"],
-  weight: ["300", "400", "500", "600", "700"],
+  weight: ["400", "600"], // нужные вам веса
+  variable: "--font-montserrat",
 });
 
 export const metadata = {
@@ -16,7 +16,7 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${firaSans.variable} bg-[#2a2a2a] antialiased`}
+        className={montserrat.className}
       >
         {children}
       </body>
