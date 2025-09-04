@@ -1,14 +1,17 @@
 "use client";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faImages, faBriefcase, faCaretRight, faCaretLeft } from "@fortawesome/free-solid-svg-icons";
-import { Card1, Card2, Card3, Card4, Card5 } from "./cards"
+import { Card1, Card2, Card3, Card4, Card5, Card6 } from "./cards"
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper/modules";
 import "swiper/css"; 
 import "swiper/css/navigation"; 
 import "swiper/css/pagination";
+import { useState } from "react";
 
 export default function Comand() {
+    
+
     return (
         <div>
             <div className="flex flex-row items-center sm:translate-x-10">
@@ -31,35 +34,40 @@ export default function Comand() {
               }
             } className="w-full max-w-full sm:max-w-[960px] max-sm:w-50 items-center !overflow-hidden px-8 sm:px-10"
             >
-                    
 
-                    <SwiperSlide className="">
-                        <div className="w-full h-full">
+                    <SwiperSlide className="pt-4 pb-4">
+                        <div className="sm:pl-3 w-full h-full">
                             <Card1 />
                         </div>
                     </SwiperSlide>
 
-                    <SwiperSlide className="">
+                    <SwiperSlide className="sm:pl-3 pt-4 pb-4">
                     <div className="w-full h-full">
-                            <Card1 />
+                            <Card2 />
                         </div>
                     </SwiperSlide>
 
-                    <SwiperSlide className="">
+                    <SwiperSlide className="sm:pl-3 pt-4 pb-4">
                     <div className="w-full h-full">
-                            <Card1 />
+                            <Card3 />
                         </div>
                     </SwiperSlide>
 
-                    <SwiperSlide className="">
+                    <SwiperSlide className="sm:pl-3 pt-4 pb-4">
                     <div className="w-full h-full">
-                            <Card1 />
+                            <Card4 />
                         </div>
                     </SwiperSlide>
 
-                    <SwiperSlide className="">
+                    <SwiperSlide className="sm:pl-3 pt-4 pb-4">
                     <div className="w-full h-full">
-                            <Card1 />
+                            <Card5 />
+                        </div>
+                    </SwiperSlide>
+
+                    <SwiperSlide className="sm:pl-3 pt-4 pb-4">
+                    <div className="w-full h-full">
+                            <Card6 />
                         </div>
                     </SwiperSlide>
 
