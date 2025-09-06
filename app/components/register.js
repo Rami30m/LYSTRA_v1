@@ -12,6 +12,9 @@ export default function Register() {
     const [blink, SetBlink] = useState({ projects: false })
     const [isVisible, setIsVisible] = useState(false)
     const elementRef = useRef(null)
+    const [open, SetOpen] = useState(false)
+    const [value, setValue] = useState("IT");
+    const options = ["IT", "Design", "2", "3", "4", "5"];
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -96,6 +99,8 @@ export default function Register() {
               email: e.target.email.value,
               phone: e.target.phone.value,
               telegram: e.target.telegram.value,
+              cv: e.target.cv.value,
+              drct: value,
               about: e.target.about.value,
             }),
             signal: controller.signal,
@@ -142,7 +147,7 @@ export default function Register() {
                     Вступить в LYSTRA
                 </h1>
 
-                <div className="flex flex-col max-sm:items-center max-sm:scale-120 max-sm:mt-20 max-sm:gap-5 gap-10 mt-5 mb-10">
+                <div className="flex flex-col max-sm:items-center max-sm:scale-120 max-sm:mt-20 max-sm:gap-5 gap-10 mt-10 mb-10">
                     <div className="flex flex-row max-sm:flex-col max-sm:gap-2 gap-20">
                         <div className="flex flex-col">
                             <label className="text-[#f8f5f0] text-xl">Имя</label>
@@ -168,6 +173,40 @@ export default function Register() {
                             <input className="placeholder-[#ABABAB] text-[#f8f5f0] w-60 max-sm:w-70 bg-white/10 shadow-[inset_0px_4px_4px_rgba(41,41,41,0.25)] p-2" type="text" placeholder="@name*" id="telegram" name="telegram" />
                         </div>
                     </div>
+
+                    <div className="flex flex-col">
+                        <label className="text-[#f8f5f0] text-xl">Резюме (Если есть)</label>
+                        <input className="placeholder-[#ABABAB] text-[#f8f5f0] max-sm:w-70 bg-white/10 shadow-[inset_0px_4px_4px_rgba(41,41,41,0.25)] p-2" type="text" placeholder="cv*" id="cv" />
+                    </div>
+
+                    <div className="flex flex-col">
+                        <label className="text-[#f8f5f0] text-xl">Направление</label>
+                        <input type="hidden" name="drct" value={value} />
+                        <div className="relative">
+                            <button
+                            type="button" 
+                            onClick={() => SetOpen(!open)}
+                            className="w-full p-2 rounded bg-white/10 text-[#f8f5f0] shadow-inner text-left"
+                            >
+                                {value}
+                            </button>
+                            {open && (
+                                <ul className="absolute z-10 left-0 right-0 mt-1 bg-[#3F3F3F] shadow-lg">
+                                {options.map((opt) => (
+                                    <li
+                                    key={opt}
+                                    onClick={() => { setValue(opt); SetOpen(false); }}
+                                    className="cursor-pointer relative backdrop-blur  px-4 py-2 hover:bg-gray-700 text-[#f8f5f0]"
+                                    >
+                                    {opt}
+                                    </li>
+                                ))}
+                                </ul>
+                            )}
+                        </div>
+                        
+                    </div>
+
                     <div className="flex flex-col">
                         <label className="text-[#f8f5f0] text-xl">О себе</label>
                         <textarea className="relative placeholder-[#ABABAB] text-[#f8f5f0] max-sm:w-70 w-140 h-30 bg-white/10 shadow-[inset_0px_4px_4px_rgba(41,41,41,0.25)] p-2" id="about" name="about" rows="4" placeholder="О себе*"></textarea>

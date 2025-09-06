@@ -8,7 +8,7 @@ export async function POST(req) {
     //   return NextResponse.json({ error: "CSRF protection: invalid origin" }, { status: 403 });
     // }
     const body = await req.json();
-    const { fullName, email, phone, telegram, about } = body;
+    const { fullName, email, phone, telegram, cv, drct, about } = body;
 
     console.log("Получена регистрация:", body);
     let time = new Date().toLocaleString("ru-RU", { timeZone: "Asia/Almaty" });
