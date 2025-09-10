@@ -20,13 +20,6 @@ export default function Header() {
 
     return (
         <header className="text-white">
-            {/* <nav className="flex items-center justify-center gap-20 h-25">
-                <a href="/about" className="text-2xl font-semibold -rotate-10 transform translate-y-9">О нас</a>
-                <a href="/register" className="text-2xl font-semibold -rotate-5 transform translate-y-1/2">Контакты</a>
-                <img src="/Logo.png" className="h-30 size-30" alt="Логотип" />
-                <a href="/projects" className="text-2xl font-semibold rotate-5 transform translate-y-1/2">Портфолио</a>
-                <a href="/gallery" className="text-2xl font-semibold rotate-10 transform translate-y-9.5">Галерея</a>
-            </nav> */}
             <nav className="flex items-center justify-center h-40 translate-x-6">
                 <div className="flex">
                     <div className="bg-[url('/glass1.png')] bg-no-repeat bg-center bg-contain translate-y-5 translate-x-7  p-1 flex" style={{backdropFilter: 'blur(20px)'}}>

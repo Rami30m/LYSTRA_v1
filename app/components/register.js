@@ -13,8 +13,9 @@ export default function Register() {
     const [isVisible, setIsVisible] = useState(false)
     const elementRef = useRef(null)
     const [open, SetOpen] = useState(false)
-    const [value, setValue] = useState("IT");
-    const options = ["IT", "Design", "2", "3", "4", "5"];
+    const [value, setValue] = useState("Разработка");
+    const options = ["Разработка", "Дизайн", "Организация", "Другое", "Новичок",];
+    const [botLink, setBotLink] = useState("");
 
     useEffect(() => {
         const observer = new IntersectionObserver(
@@ -108,8 +109,10 @@ export default function Register() {
 
           clearTimeout(timeoutId);
 
-          if (res.ok) {
+          const data = await res.json();
+          if (res.ok && data.success) {
             SetSuccess(true)
+            setBotLink(data.link || data.link || "");
             console.log("Успешно отправлено!");
             console.log(res);
           } else {
@@ -230,9 +233,11 @@ export default function Register() {
 
             {Success && (
                 <form id="registration-form" onSubmit={handleSubmit} className="mt-20 relative max-sm:w-95 max-sm:bg-[url('/glass11.png')] flex flex-col place-items-center w-170 h-120 mb-10  bg-[url('/glass9.png')] bg-no-repeat bg-center bg-contain">
-                <h1 className="max-sm:w-50 translate-y-5 text-[#f8f5f0] text-2xl font-bold text-center mt-10">
-                    Регистрация прошла успешно
+                <h1 className="max-sm:w-50 translate-y-5 text-[#f8f5f0] text-2xl font-bold text-center w-100 mt-10">
+                Пройдите по ссылке для дальнейшей регистрации
                 </h1>
+                {/* <h1 className="max-sm:w-50 translate-y-5 text-[#f8f5f0] text-2xl font-bold w-100 text-center ">Войдите по ссылке для дальнейшей регистрации</h1> */}
+                {botLink && <a href={botLink}><h1  className="max-sm:w-50 cursor-pointer translate-y-5 text-[#a2e3ea] mt-10 mb-10 text-2xl font-bold w-100 text-center ">Продолжить</h1></a>}
                 <button className="text-[#2a2a2a] bg-[#f8f5f0] p-1.5 text-2xl cursor-pointer font-bold text-center translate-y-10" onClick={() => SetSuccess(false)}>Закрыть</button>
                 </form>
             )}

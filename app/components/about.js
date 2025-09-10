@@ -54,12 +54,6 @@ export default function About() {
                     <span className="absolute inset-0 bg-[#ffef78] translate-y-[200%] z-0 transition-transform duration-600 ease-in-out group-hover:translate-y-0"></span>
                 </button>
                 </a>
-
-                {/* <a href="#reg" className="inline-block relative overflow-hidden mx-auto bg-[#f8f5f0] cursor-pointer p-1 w-50 text-2xl font-bold text-center max-sm:-mt-5 mt-5">
-                    <span className="relative z-10">Вступить</span>
-                    <span className="absolute inset-0 bg-[#ffef78] translate-y-[-100%] z-0 transition-transform duration-300 ease-in-out hover:translate-y-0"></span>
-                
-                </a> */}
                 </div>            
         </div>
     )

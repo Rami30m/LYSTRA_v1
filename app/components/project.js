@@ -15,7 +15,6 @@ const grid = {
     hidden: {},
     show: {
       transition: {
-        // задержка между СТРОКАМИ
         staggerChildren: 0.3,
       },
     },
@@ -27,14 +26,14 @@ const container = {
       opacity: 1,
       transition: {
         when: "beforeChildren",
-        staggerChildren: 0.1, // задержка между элементами
+        staggerChildren: 0.1, 
       },
     },
   }
   
   const item = {
-    hidden: { opacity: 0, x: -50 }, // старт слева
-    show: { opacity: 1, x: 0 },     // финальное положение
+    hidden: { opacity: 0, x: -50 }, 
+    show: { opacity: 1, x: 0 },     
   }
 
 export default function ProjectsPage() {
